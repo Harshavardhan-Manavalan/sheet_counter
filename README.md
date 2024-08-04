@@ -29,20 +29,24 @@
    cd <repository_name>
 
 2. **Create a Virtual Environment**
+   ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows use: venv\Scripts\activate
 
 3. **Install Required Libraries**
    Create a requirements.txt file in the root directory with the following content:
 
+   ```bash
    Flask==2.0.1
    opencv-python==4.5.3.56
    numpy==1.21.1
 
-4. **Install the dependencies using:**
+5. **Install the dependencies using:**
+   ```bash
     pip install -r requirements.txt
 
-5. **Run the Application**
+7. **Run the Application**
+   ```bash
     python sheet_counter.py
 
 The application will be accessible at http://127.0.0.1:5000/.
