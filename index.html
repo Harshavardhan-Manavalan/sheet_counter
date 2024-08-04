@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sheet Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 300px;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    input[type="file"] {
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    p {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+    .error {
+      color: red;
+    }
+    .result {
+      color: #333;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Sheet Counter</h1>
+    <form method="POST" action="/" enctype="multipart/form-data">
+      <input type="file" name="image" accept="image/*">
+      <button type="submit">Count Sheets</button>
+    </form>
+    {% if error_message %}
+      <p class="error">{{ error_message }}</p>
+    {% endif %}
+    {% if sheet_count is not none %}
+      <p class="result">Estimated Sheet Count: {{ sheet_count }}</p>
+    {% endif %}
+  </div>
+</body>
+</html>
